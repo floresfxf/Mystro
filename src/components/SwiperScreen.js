@@ -83,12 +83,12 @@ var styles = StyleSheet.create({
   }
 
 })
-@connect(
-  state => ({
-    preferences: state.prefs
-  }),
-  dispatch => bindActionCreators(PrefActions, dispatch)
-)
+// @connect(
+//   state => ({
+//     preferences: state.prefs
+//   }),
+//   dispatch => bindActionCreators(PrefActions, dispatch)
+// )
 
 export default class SwiperScreen extends Component {
   render() {
