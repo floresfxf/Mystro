@@ -7,19 +7,16 @@ import {
 	TouchableOpacity
 } from 'react-native';
 
-class SignupOptions extends Component {
+export default class SignupOptions extends Component {
 	constructor(props){
 		super(props);
 	}
-	onPress() {
-		console.log(this.props);
-		this.props.navigation.navigate('Register')
-	}
+
 	render() {
 		return (
 
 			<View style={styles.container}>
-				<TouchableOpacity onPress={this.onPress} style={styles.press}>
+				<TouchableOpacity onPress={this.props.toRegister.bind(this)} style={styles.press}>
 				<Text style={styles.text}>Create Account</Text>
 				</TouchableOpacity>
 				<Text style={styles.text}>Forgot Password?</Text>
@@ -47,12 +44,3 @@ const styles = StyleSheet.create({
 	},
 
 });
-
-SignupOptions.propTypes = {
-  navigation: PropTypes.object.isRequired,
-};
-
-SignupOptions.navigationOptions = {
-  title: 'Log In',
-};
-export default SignupOptions;

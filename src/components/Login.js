@@ -10,13 +10,16 @@ export default class Login extends Component {
 	static propTypes = {
     navigation: PropTypes.object.isRequired
   };
-
+	toRegister(){
+		this.props.navigation.navigate('Register')
+	}
 	render() {
+		console.log(this.props);
 		return (
 			<Background>
 				<Splash />
 				<LoginForm />
-				<SignupOptions {...this.props}/>
+				<SignupOptions toRegister={this.toRegister.bind(this)}/>
 				<AnimatedButton {...this.props}/>
 			</Background>
 		);
